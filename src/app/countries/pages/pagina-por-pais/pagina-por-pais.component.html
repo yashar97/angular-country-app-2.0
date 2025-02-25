@@ -1,0 +1,13 @@
+<h2>{{titulo}}</h2>
+<hr>
+
+<componente-buscador (enviarValorAlPadre)="buscarPorPais($event)"
+    textoPlaceholder="Ingresa el nombre de algún país..."></componente-buscador>
+
+<div *ngIf="paises.length === 0; else resultado" class="alert alert-warning text-center mt-3">
+    No hay países para mostrar
+</div>
+
+<ng-template #resultado>
+    <country-table [paises]="paises"></country-table>
+</ng-template>

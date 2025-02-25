@@ -1,0 +1,23 @@
+<table class="table mt-3">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Icono</th>
+            <th>Bandera</th>
+            <th>Nombre</th>
+            <th>Capital</th>
+            <th>Población</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let pais of paises; let i = index">
+            <td>{{i + 1}}</td>
+            <td>{{pais.flag}}</td>
+            <td><img [src]="pais.flags.svg" [alt]="pais.name.common"></td>
+            <td>{{pais.name.common}}</td>
+            <td>{{pais.capital}}</td>
+            <td>{{pais.population | number}}</td>
+        </tr>
+    </tbody>
+</table>

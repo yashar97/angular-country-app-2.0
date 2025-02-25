@@ -1,0 +1,20 @@
+<h2>{{titulo}}</h2>
+<hr>
+
+<!-- btn-outline-primary -->
+<div class="d-flex justify-content-center gap-3">
+    <button (click)="seleccionarRegion(region)" [ngClass]="{'btn-outline-primary': regionSeleccionada === region}"
+        class="btn" *ngFor="let region of regiones">
+        {{region}}
+    </button>
+    <button (click)="limpiar()" class="btn btn-outline-danger">Limpiar</button>
+</div>
+
+<div *ngIf="paises.length === 0; else resultado" class="alert alert-warning text-center mt-3">
+    No hay países para mostrar
+</div>
+
+
+<ng-template #resultado>
+    <country-table [paises]="paises"></country-table>
+</ng-template>
